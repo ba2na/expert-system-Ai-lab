@@ -1,0 +1,114 @@
+last = ["s", "r"]
+
+def Boolen(bol):
+    bol = bol.upper()
+    if bol in {"TRUE", "YES" , "yes"}:
+        return True
+    elif bol in {"FALSE", "NO" , "no"}:
+        return False
+    else:
+        return "NEW"
+
+def q():
+    bol = input("Do you have q ? (Answer: yes/no): ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        q()
+    elif bol:
+        return x()
+    elif not bol:
+        return m()
+
+def m():
+    bol = input("Do you have m ? (Answer: yes/no): ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        m()
+    elif  bol:
+        return y()
+    elif not bol:
+        return wANDx()
+
+def wANDx():
+    bol = input("Do you have w and x ? (Answer: yes/no): ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        wANDx()
+    elif not bol:
+        return aANDb()
+    elif bol:
+        return g()
+
+def aANDb():
+    bol = input("Do you have a and b ? (Answer: yes/no): ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        aANDb()
+    elif not bol:
+        return dANDz()
+    elif bol:
+        return cANDe()
+
+def dANDz():
+    bol = input("Do you have d ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        dANDz()
+    elif not bol:
+        return cANDe()
+    elif bol:
+        return cANDe()
+
+def cANDe():
+    bol = input("Do you have c AND e ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        cANDe()
+    elif not bol:
+        return x()
+    elif bol:
+        return f()
+
+def x():
+    bol = input("Do you have x ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        x()
+    elif not bol:
+        return y()
+    elif bol:
+        return aANDb()
+
+def y():
+    bol = input("Do you have y ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        y()
+    elif not bol:
+        return wANDx()
+    elif bol:
+        return aANDb()
+
+def f():
+    bol = input("Do you have f ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        f()
+    elif not bol:
+        return g()
+    elif bol:
+        return last[0]
+
+def g():
+    bol = input("Do you have g ? (Answer: yes/no)?: ")
+    bol = Boolen(bol)
+    if bol == "NEW":
+        g()
+    elif not bol:
+        print('No Answer')
+    elif bol:
+        return last[1]
+
+if __name__ == '__main__':
+    print('Answer is '+q())
+    stop = input("End program")
