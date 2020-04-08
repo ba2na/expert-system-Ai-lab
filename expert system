@@ -1,4 +1,4 @@
-last = ["s", "r"]
+last = ["you are s!!", "you are r!!"]
 
 def Boolen(bol):
     bol = bol.upper()
