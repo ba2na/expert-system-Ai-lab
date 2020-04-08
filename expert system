@@ -110,5 +110,5 @@ def g():
         return last[1]
 
 if __name__ == '__main__':
-    print('Answer is '+q())
+    print('you are '+q()+ '!!')
     stop = input("End program")
